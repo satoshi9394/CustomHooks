@@ -8,9 +8,10 @@ import ReactDOM from 'react-dom';
 // import CounterWithCustinHook from './components/01-useState/CounterWithCustinHook';
 // import SimpleForm from './components/02-useEffect/SimpleForm';
 // import HookApp from './HookApp';
-import Layout from './components/05-useLayaoutEffect/Layout'
+// import Layout from './components/05-useLayaoutEffect/Layout'
+import Memorize from './components/06-memos/Memorize';
 
 ReactDOM.render(
-    <Layout />,
+    <Memorize />,
   document.getElementById('root')
 );
