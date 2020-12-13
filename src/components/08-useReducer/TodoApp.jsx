@@ -27,11 +27,11 @@ const TodoApp = () => {
       desc: description,
       done: false
     };
-    const action = {
+    const addAction = {
       type: 'add',
       payload: newTodo
     }
-    dispatch( action );
+    dispatch( addAction );
     reset()
   }
 
@@ -42,6 +42,14 @@ const TodoApp = () => {
   useEffect( () => {
     localStorage.setItem('todos', JSON.stringify( todos ))
   }, [todos])
+
+  const handleDelete = ( todoId ) => {
+    const deleteAction = {
+      type: 'delete',
+      payload: todoId
+    };
+    dispatch(deleteAction)
+  }
 
   return (
     <div>
@@ -60,6 +68,7 @@ const TodoApp = () => {
                   <p className='text-center'>{ i + 1}.-{ todo.desc } </p>
                   <button
                     className="btn btn-danger"
+                    onClick= { () => { handleDelete(todo.id)}}
                   >
                     borrar
                   </button>
