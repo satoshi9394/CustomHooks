@@ -11,7 +11,7 @@ const TodoList = ({todos, handleToggle, handleDelete}) => {
           <TodoListItem
             key={todo.id}
             todo={todo}
-            i={ i }
+            index={ i }
             handleDelete={ handleDelete }
             handleToggle={ handleToggle }
           />
