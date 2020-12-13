@@ -1,5 +1,6 @@
 import React from 'react'
 import useForm from '../../../hooks/useForm';
+import PropTypes from 'prop-types'
 
 
 const TodoAdd = ({ handleAddTodo }) => {
@@ -43,6 +44,11 @@ const TodoAdd = ({ handleAddTodo }) => {
       </form>
     </>
   )
+}
+
+TodoAdd.propTypes = {
+  handleAddTodo: PropTypes.func.isRequired,
+
 }
 
 export default TodoAdd
