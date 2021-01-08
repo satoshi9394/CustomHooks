@@ -26,4 +26,25 @@ describe('Pruebas en todoReducer', () => {
     expect( state ).toEqual(newDemoTodos);
   });
 
+  test('debe de borrar un Todo', () => {
+    const action =  {
+      type: 'delete',
+      payload: 1
+    };
+    const newDemoTodos = demoTodos.filter( todo => todo.id !== action.payload );
+    const state = todoReducer(demoTodos, action);
+    expect( state.length ).toBe(1);
+    expect( state ).toEqual(newDemoTodos);
+  });
+
+  test('debe de hacer el toggle Todo', () => {
+    const action =  {
+      type: 'toggle',
+      payload: 1
+    };
+    const newDemoTodos = demoTodos.map( todo => ( todo.id === action.payload ? { ...todo, done: !todo.done } : todo))
+    const state = todoReducer(demoTodos, action);
+    expect( state ).toEqual(newDemoTodos);
+  });
+
 })
